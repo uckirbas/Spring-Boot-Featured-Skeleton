@@ -20,6 +20,7 @@
         <module>modules/coremodules/auth</module>
         <module>modules/coremodules/acl</module>
         <module>modules/appmodules/messaging</module>
+        <module>modules/appmodules/servicito</module>
         <module>app</module>
     </modules>
 

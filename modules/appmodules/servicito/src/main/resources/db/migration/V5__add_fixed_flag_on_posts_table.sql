@@ -1,0 +1,1 @@
+ALTER TABLE social_posts ADD COLUMN fixed BIT NOT NULL ;

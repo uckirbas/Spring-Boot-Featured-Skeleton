@@ -1,0 +1,1 @@
+ALTER TABLE apartments ADD COLUMN fixed BIT NOT NULL ;

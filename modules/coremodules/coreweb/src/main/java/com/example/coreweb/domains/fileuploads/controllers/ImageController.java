@@ -8,7 +8,7 @@ import com.example.coreweb.domains.fileuploads.services.FileUploadService;
 import com.example.auth.entities.UserAuth;
 import com.example.common.exceptions.invalid.ImageInvalidException;
 import com.example.common.exceptions.notfound.NotFoundException;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -23,7 +23,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/images")
-@Api(tags = "Uploads", description = "Handle File Uploads including images")
+@Tag(name = "Uploads", description = "Handle File Uploads including images")
 public class ImageController {
 
     private final FileUploadService uploadService;

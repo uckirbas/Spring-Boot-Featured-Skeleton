@@ -2,25 +2,24 @@ package com.example.acl.domains.users.models.dtos
 
 import com.example.coreweb.domains.base.models.dtos.BaseDto
 import com.fasterxml.jackson.annotation.JsonProperty
-import io.swagger.annotations.ApiModel
-import io.swagger.annotations.ApiModelProperty
+import io.swagger.v3.oas.annotations.media.Schema
 import javax.validation.constraints.NotBlank
 
-@ApiModel(description = "To create a privilege with permission to access certain urls")
+@Schema(description = "To create a privilege with permission to access certain urls")
 class PrivilegeDto : BaseDto() {
     @NotBlank
-    @ApiModelProperty(name = "A Unique string without space", example = "ACCESS_USER_DATA")
+    @Schema(name = "A Unique string without space", example = "ACCESS_USER_DATA")
     lateinit var name: String
 
     var description: String? = null
 
     @NotBlank
-    @ApiModelProperty(name = "A readable label for the Privilege", example = "Read User Data")
+    @Schema(name = "A readable label for the Privilege", example = "Read User Data")
     lateinit var label: String
 
     @NotBlank.List
     @JsonProperty("access_urls")
-    @ApiModelProperty(dataType = "List")
+    @Schema(name = "access_urls")
     lateinit var accessUrls: List<String>
 
 }

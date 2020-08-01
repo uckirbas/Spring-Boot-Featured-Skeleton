@@ -6,14 +6,14 @@ import com.example.acl.domains.users.services.UserService
 import com.example.auth.config.security.TokenService
 import com.example.auth.entities.UserAuth
 import com.example.common.exceptions.notfound.UserNotFoundException
-import io.swagger.annotations.Api
+import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/v1/admin/users")
-@Api(tags = [Constants.Swagger.USERS_ADMIN], description = Constants.Swagger.USERS_ADMIN_API_DETAILS)
+@Tag(name = Constants.Swagger.USERS_ADMIN, description = Constants.Swagger.USERS_ADMIN_API_DETAILS)
 class UserController @Autowired constructor(
         private val userService: UserService,
         private val userMapper: UserMapper,

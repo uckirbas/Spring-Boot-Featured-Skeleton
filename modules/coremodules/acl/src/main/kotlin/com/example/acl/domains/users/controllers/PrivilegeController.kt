@@ -6,7 +6,7 @@ import com.example.acl.domains.users.models.dtos.PrivilegeDto
 import com.example.acl.domains.users.models.mappers.PrivilegeMapper
 import com.example.acl.domains.users.services.PrivilegeService
 import com.example.common.exceptions.notfound.NotFoundException
-import io.swagger.annotations.Api
+import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.http.ResponseEntity
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/v1/admin/privileges")
-@Api(tags = [Constants.Swagger.PRIVILEGES_ADMIN], description = Constants.Swagger.PRIVILEGES_ADMIN_API_DETAILS)
+@Tag(name = Constants.Swagger.PRIVILEGES_ADMIN, description = Constants.Swagger.PRIVILEGES_ADMIN_API_DETAILS)
 class PrivilegeController @Autowired constructor(
         private val privilegeService: PrivilegeService,
         private val privilegeMapper: PrivilegeMapper

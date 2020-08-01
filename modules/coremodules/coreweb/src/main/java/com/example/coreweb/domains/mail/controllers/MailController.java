@@ -2,7 +2,7 @@ package com.example.coreweb.domains.mail.controllers;
 
 
 import com.example.coreweb.domains.mail.services.MailService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api(tags = "Email Configs/Services", description = "Email services like testing if email works etc.")
+@Tag(name = "Email Configs/Services", description = "Email services like testing if email works etc.")
 public class MailController {
     private final MailService mailService;
 

@@ -1,10 +1,9 @@
 package com.example.acl.domains.users.models.mappers
 
 import com.example.acl.domains.users.models.dtos.RoleDto
-import com.example.auth.entities.Role
 import com.example.acl.domains.users.services.PrivilegeService
+import com.example.auth.entities.Role
 import com.example.common.exceptions.notfound.NotFoundException
-
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
@@ -23,6 +22,7 @@ class RoleMapper @Autowired constructor(
         dto.name = entity.name
         dto.description = entity.description
         dto.restricted = entity.isRestricted
+        dto.privilegeIds = entity.privileges.map { privilege -> privilege.id }
         dto.privileges = entity.privileges?.map { privilege -> this.privilegeMapper.map(privilege) }
         return dto
     }

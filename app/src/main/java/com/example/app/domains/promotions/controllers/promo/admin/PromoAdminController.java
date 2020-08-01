@@ -7,7 +7,7 @@ import com.example.common.exceptions.invalid.InvalidException;
 import com.example.common.exceptions.notfound.NotFoundException;
 import com.example.common.exceptions.unknown.UnknownException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/api/v1/admin/promos")
-@Api(tags = "Promo [Admin]", description = "Promotions CRUD for admin")
+@Tag(name = "Promo [Admin]", description = "Promotions CRUD for admin")
 public class PromoAdminController {
 
     private final PromoService promoService;

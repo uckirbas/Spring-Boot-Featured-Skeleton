@@ -4,7 +4,7 @@ import com.example.app.domains.promotions.models.entities.Promo;
 import com.example.app.domains.promotions.services.PromoService;
 import com.example.common.exceptions.invalid.InvalidException;
 import com.example.common.exceptions.notfound.NotFoundException;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/api/v1/promos")
-@Api(tags = "Promo", description = "Fetching latest promotions, handling click events etc")
+@Tag(name = "Promo", description = "Fetching latest promotions, handling click events etc")
 public class PromoController {
 
     private final PromoService promoService;

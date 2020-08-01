@@ -4,7 +4,7 @@ import com.example.auth.config.security.SecurityContext;
 import com.example.app.domains.notifications.services.FirebaseTokenService;
 import com.example.common.exceptions.invalid.InvalidException;
 import com.example.common.exceptions.notfound.UserNotFoundException;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ import java.util.Objects;
 
 @Controller
 @RequestMapping("/api/v1/notifications")
-@Api(tags = "Notifications", description = "Fetch notifications, register firebase tokens etc")
+@Tag(name = "Notifications", description = "Fetch notifications, register firebase tokens etc")
 public class NotificationController {
     private final FirebaseTokenService firebaseTokenService;
 

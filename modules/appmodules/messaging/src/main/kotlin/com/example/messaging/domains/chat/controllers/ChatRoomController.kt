@@ -9,7 +9,7 @@ import com.example.messaging.domains.chat.services.ChatRoomService
 import com.example.coreweb.domains.base.controllers.CrudController
 import com.example.messaging.routing.Route
 
-import io.swagger.annotations.Api
+import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.http.ResponseEntity
@@ -18,7 +18,7 @@ import javax.validation.Valid
 
 
 @RestController
-@Api(tags = [Constants.Swagger.CHAT_ROOMS], description = Constants.Swagger.CHAT_ROOMS_DETAILS)
+@Tag(name = Constants.Swagger.CHAT_ROOMS, description = Constants.Swagger.CHAT_ROOMS_DETAILS)
 class ChatRoomController @Autowired constructor(
         private val chatRoomMapper: ChatRoomMapper,
         private val chatRoomService: ChatRoomService
